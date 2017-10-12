@@ -1,0 +1,289 @@
+html{
+	  		font-size: 37px;
+	  	}
+	  	body{
+	  		padding: 0;
+	  	}
+	  	.nav-bar{
+	  		width: 100%;
+	  		height: 40px;
+	  		background: #fff;
+	  		z-index: 10;
+	  		border-bottom: 1px solid #ccc;
+	  	}
+	  	.nav-bar > ul{
+	  		padding: 0;
+	  		margin: 0;
+	  		height: 100%;
+	  	}
+	  	.nav-bar > ul >li{
+	  		float: left;
+	  	}
+	  	.nav-bar > ul >li:nth-child(1){
+	  		margin-right: .8rem;
+	  	}
+	  	.nav-bar > ul > .logo{
+	  		width: 171px;
+	  		height: 40px;
+	  	}
+	  	.nav-bar > ul > .logo img{
+	  		width: 171px;
+	  		height: 40px;
+	  	}
+	  	.nav-bar > ul > .car,.homepage,.personl{
+	  		width: 18px;
+	  		height: 18px;
+	  		margin-left: 18px;
+	  	}
+	  	.nav-bar > ul img{
+	  		width: 18px;
+	  		height: 18px;
+	  	}
+	  	.swiper-container > .swiper-wrapper{
+	  		width: 100%;
+	  		height: 8rem;
+	  	}
+	  	.swiper-container > .swiper-wrapper > div{
+	  		box-sizing: border-box;
+	  		border-right: 5px solid #ccc;
+	  	}
+	  	.swiper-container > .goodscript{
+	  		width: 100%;
+	  		height: 2rem;
+	  		position: relative;
+	  		padding-top: 5px;
+	  	}
+	  	.swiper-container > .goodscript > span{
+	  		margin-right: 5px;
+	  		float: left;
+	  	}
+	  	.swiper-container > .goodscript > .prefrend{
+	  		display: inline-block;
+	  		top: 0;
+	  		width: 1.7rem;
+	  		height: .378rem;
+	  		background: url("http://s1.ymatou.com/itemm/static/img/tag_psp.a865ad9.png") no-repeat;
+	  		background-size: cover;
+	  	}
+	  	.swiper-container > .goodscript > .freeship{
+	  		font-size: 12px;
+	  		color: red;
+	  		border: 1px solid red;
+	  		border-radius: 2px;
+	  	}
+	  	.swiper-container > .goodscript > .goods-script{
+	  		font-size: 14px;
+	  	}
+	  	.swiper-container > .goodscript > .goodsprice{
+	  		color: red;
+	  		font-size: 14px;
+	  	}
+	  	.modalcar{
+	  		width: 100%;
+	  		height: 1.3rem;
+	  		display: flex;
+	  		position: fixed;
+	  		bottom: 0;
+	  		z-index: 10;
+	  		border-top: 1px solid #ccc;
+	  	}
+	  	.modalcar > div{
+	  		text-align: center;
+	  		
+	  	}
+	  	.modalcar > div:nth-child(1){
+	  		flex-grow: 3;
+	  		background: #fff;
+	  		text-align: center;
+	  		position: relative;
+	  		line-height: 65px;
+	  		font-size: .4rem;
+	  	}
+	  	.modalcar > div:nth-child(1)::before{
+	  		content: "";
+	  		position: absolute;
+	  		width: .378rem;
+	  		height: .378rem;
+	  		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAA8lJREFUWAnFl8kvbFEQxquvJuYgiIUQMQ8JMS2IMQgLCwvxR1pYSMwRQ1iYQowxBokIghBDTO/51Xv35tKud9vTrRLd1zmn6vvuOXWqvvb8ejX5QTN+EFuhve8JsCHb29uyt7cnZ2dncnd3J6GhoRIXFydpaWmSl5cn4eHh7930//v7e9nY2JCDgwO5vLyUx8dHiYiIkMTERMnIyJCsrCzxeDxvfD32Izg+PpaJiQl1ZhVAkZGR8vDwIDc3NwI5yFRUVEhRUdGbQCsrKzI7O6uggERFRUlYWJjc3t4KxDBeora2VlJSUixfiwBvPTY2Ji8vL8q2rKxMEhISrIXsxOrqqiwuLuqa/Px8qamp0fnJyUlZX18XwzCkpKRECgsL9c1N5/Pzc5mfn9ddZU1DQ4NkZmbqtBI4OTmR3t5eCQkJkerqasnOzjZ9fb7Z2pGRESFoVVWVzk9PTyvZpqYmfUsfp78DW1tbMjU1Jc/Pz9Le3i7JycmiBLq7u+Xi4kIaGxv1nJwCmOMcR09Pj7W1HFVHR4duu7nG6ZudHh0dlfj4eOns7BRjd3dXwdPT012BE5jzbW1tlZiYGP3jmTE3RiKCxQuD7SXbMRLLHyOzu7q6/HGx1oK1v7//JydOT081YewJZ60M0ANYXE+wDa5JdHR0gKCcw4IJ9uutMPRaOS8NzAzXHWyDDOaOB9vABNugOrEVXK1gGVhggm2kpqYq7uHhYbDwxcQC2+BOchbLy8tBIwAWmIpNMaE4UBg2NzcDTgIMsMAEW/UAjYcuR02/uroKGAligwEWmJgSgAlNiLZLo6GPf7cRk9hggAUmZiminJwcyc3NVREyODioHeu7SND9iInAAQMs0ywCDCAWSIyjoyPp6+v7lp3gzYlFTGKDYTdLkJiDsGWraBZJSUna9ajbXzGKzcDAgNZ8wNELaA67+RBgEumFOkJAcFZtbW2fCg17QPMZ4dLf3y/X19cqcOrr6330IGs/JGAGmZubk4WFBdV2iBVEqRtDlCI6SLjS0lIpLy93dPuUAF47OzsyPj6uSVlZWSnFxcWOwZhYWlqSmZkZ3eq6ujpL+zk5/ZMAjmjGoaEhrd/Ia7aTu2w3ko1jQ+CgpFtaWlTz2dd89OyKAI40kOHhYSVDE2lublZdxxyVjTnOHaHJnFuJ5poAQPRwKtna2pp4vV4tKIyjdJ+enqSgoECVMnXerflFwAxKXvADxqyYHAf329T65jo3318iQGDqOvUC437Hxsbqs78fXyYAEPUCe/97Twddfvj8OHXpp8v+B9jE+Q3W5+tsXCx8gQAAAABJRU5ErkJggg==");
+	  		background-size: cover;
+	  		left: 50%;
+	  		top: 8px;
+	  		transform: translateX(-50%);
+	  		-wibkit-transform:translateX(-50%);
+	  	}
+	  	.modalcar > div:nth-child(2){
+	  		flex-grow: 2;
+	  		background: orangered;
+	  		font-size: .4rem;
+	  		line-height: 1.3rem;
+	  	}
+	  	.modalcar > div:nth-child(3){
+	  		flex-grow: 2;
+	  		background: red;
+	  		font-size: .4rem;
+	  		line-height: 1.3rem;
+	  	}
+	  	.swiper-container > .logistics{
+	  		width: 100%;
+	  		height: 3rem;
+	  		margin-top: 10px;
+	  	}
+	  	.swiper-container > .logistics > .official{
+	  		width: 100%;
+	  		height: 1rem;
+	  	}
+	  	.swiper-container > .logistics > .official::after{
+	  		content: "";
+	  		width: 80%;
+	  		height: 2px;
+	  		background: #343434;
+	  		float: right;
+	  	}
+	  	.swiper-container > .logistics > .official > span{
+	  		margin-right: 5px;
+	  		margin-left: 5px;
+	  		font-size: 12px;
+	  		float: left;
+	  		line-height: 1rem;
+	  	}
+	  	.swiper-container > .logistics > .transportation{
+	  		width: 100%;
+	  		height: 1rem;
+	  		border-bottom: 1px solid #CCCCCC;
+	  	}
+	  	.swiper-container > .logistics > .transportation > span{
+	  		font-size: 12px;
+	  		line-height: 1rem;
+	  		float: left;
+	  		margin: 0 5px 0 5px;
+	  	}
+	  	.swiper-container > .logistics > .transportation > span:nth-child(2){
+	  		line-height: .9rem;
+	  	}
+	  	.swiper-container > .logistics > .compansate{
+	  		width: 100%;
+	  		height: 1rem;
+	  		background: #eaeaea;
+	  	}
+	  	.swiper-container > .logistics > .compansate > span{
+	  		float: left;
+	  		font-size: 12px;
+	  		position: relative;
+	  		top: 50%;
+	  		transform: translateY(-50%);
+	  		margin: 0 5px 0 5px;
+	  	}
+	  	
+	  	.swiper-container > .logistics > .compansate > span:nth-child(1) > i{
+	  		display: inline-block;
+	  		width: 1.4rem;
+	  		height: .3rem;
+	  		background: url("data:image/png;base64,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");
+	  		background-repeat: no-repeat;
+	  		background-size: 100%;
+	  	}
+	  	.swiper-container > .logistics > .compansate > span::before{
+	  		content: "";
+	  		width: .3rem;
+	  		float: left;
+	  		height: .3rem;
+	  		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAArRJREFUOBGdlM9PE0EUx2dmi/4Blir+SDwotYkxJNbEKyRy0xYxu9t64USinqEejOmBmBqMBxT9D2h3oxG9GDXC0QOYaGIg5WA8+CNsqQcuQMPO+H0L025LawKTTGbm/fjMm/dmhrM2TY2OdlXW11NKqSHOWJIpdVwxVmOcr2C9ApdSzHHetnFl0De3NdNMS8YmATgDZZlzPof5L8V5F5OyF+s+bJTA+BXy8aOO8z5MiOiFyudFZWnpgc9YDsbzBmPZqOMsaH14XLWsQcDGsOFNyJuAdTvPNAvoEv1eXXjQCR1z1TTVQWEV2056IyPHaH9BBaCc0TFjrjux36A8274jpVxgGxtT5BsJqokCUM72C0Mubyspn6L6m1yp5+QvULE0VbNTATptQjBcp2mCwSbV7brzZBsB7BKO+7GTYzt5K4yuzt9M5sK2lFcFdunBHfupHau2fapqWZf1unUE7BaOFxwTupS+h77vX8Fp7wsIEWSjbSv1BP0TJbsh3ZkRDAE8QwBbGNMaRlolxGGAagI5+I0dT2pnQ4gpygslOwzdjWwnZwRz3Xfah8aAAVYEYX4GoF8ro8XiXDWTuYZ8vCEoQEpwLjGfrkfWAiNfvJx+9EXBDWMW0HOVbPaihh4pFj9gngoqiEoC1jhmGxj5EoML8Vp0x+OzcPwufb+ggTTu5ieA/i8ysg18wQhYJMCzGw6enm3naB1uXjZ7tmJZvWFZeO5Z1l3yRWquh+UMgkdQ+ijEHmiTYWhBtvShkK8W17+vWCIx7i0vc/x5BYAHmGHkYjMzX7RheETUfcz3HyK3g0jXY/LV+qY7SELsegMJnsQ9Ow3jb7gOwQdLOhifQD4HoDsP3Q+8sLFYqfSCdLrtAZICn+2htXJ5GBEMAZ6Ec0/goNQfQBZRzVfRePwlz+drGqTHf3gSaE5WFr0wAAAAAElFTkSuQmCC");
+	  		background-size: cover;
+	  		background-repeat: no-repeat;
+	  		margin-right: 5px;
+	  	}
+	  	.swiper-container > .translate{
+	  		width: 100%;
+	  		height: 1rem;
+	  		border-bottom: 1px solid red;
+	  	}
+	  	.swiper-container > .translate > span{
+	  		display: inline-block;
+	  		position: relative;
+	  		left: 45%;
+	  		top: 0;
+	  		transform: translateY(-70%);
+	  		font-size: 12px;
+	  	}
+	  	.swiper-container > .translate > span::after{
+	  		content: "";
+	  		display: inline-block;
+	  		width: 5px;
+	  		height: 5px;
+	  		background: #ccc;
+	  		border-radius: 100%;
+	  		margin-left: 5px;
+	  	}
+	  	.swiper-container > .translate > span::before{
+	  		content: "";
+	  		display: inline-block;
+	  		width: 5px;
+	  		height: 5px;
+	  		background: #ccc;
+	  		border-radius: 100%;
+	  		margin-right: 5px;
+	  	}
+	  	.swiper-container > .playtranslate{
+	  		width: 100%;
+	  		height: 1rem;
+	  		font-size: .325rem;
+	  		text-align: center;
+	  		line-height: 1rem;
+	  	}
+	  	.swiper-container > .goodsdetails{
+	  		width: 100%;
+	  		height: 3.5rem;
+	  		background: url("http://s1.ymatou.com/itemm/static/img/intro.cee7167.png") no-repeat;
+	  		background-size: 100%;
+	  	}
+	  	.swiper-container > .introdction{
+	  		width: 100%;
+	  	}
+	  	.swiper-container > .introdction > div{
+	  		width: 100%;
+	  		height: 1.3rem;
+	  		position: relative;
+	  	}
+	  	.swiper-container > .introdction > div:nth-child(1) > span{
+	  		font-size: .325rem;
+	  		line-height: 1rem;
+	  		position: absolute;
+	  		width: 80%;
+	  		left: 50%;
+	  		transform: translateX(-40%);
+	  	}
+	  	.swiper-container > .introdction > div:nth-child(1) > span::before{
+	  		content: "";
+	  		display:inline-block;
+	  		width: 1.5rem;
+	  		height: 1px;
+	  		background: red;
+	  		transform: translateY(-100%);
+	  		margin-right: 10px;
+	  	}
+	  	.swiper-container > .introdction > div:nth-child(1) > span::after{
+	  		content: "";
+	  		display: inline-block;
+	  		width: 1.5rem;
+	  		height: 1px;
+	  		background: red;
+	  		transform: translateY(-100%);
+	  		margin-left: 10px;
+	  	}
+	  	.swiper-container > .introdction > .pricescript{
+	  		height: 3rem;
+	  		font-size: .325rem;
+	  		padding-left: 15px;
+	  		line-height: .5rem;
+	  	}
+	  	.swiper-container > .introdction > .pricescript > p{
+	  		font-size: .6rem;
+	  	}
+	  	.swiper-container > .protect{
+	  		width: 100%;
+	  		height: 2rem;
+	  	}
+	  	.swiper-container > .protect > img{
+	  		width: 100%;
+	  		height: 100%;
+	  	}

@@ -36,5 +36,5 @@
 
 
 -------------------------------
-Ps：先引用components下的reset.css去掉默认样式再引用组件的css，最后才是自己的css.
-组件放在components文件夹下，自己写的js和css还有图片分别放在对应的文件夹下
+Ps：components下的reset.css放在组件样式之后去掉默认样式再引用组件的css，最后才是自己的css.
+组件放在components文件夹下，自己写的js和css还有图片分别放在对应的文件夹下.
