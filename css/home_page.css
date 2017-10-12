@@ -472,13 +472,13 @@ body,html{
     padding: .1333333333rem .08rem;
 }
 /*返回顶部*/
-.goto-top {
+.go-top {
     position: fixed;
     right: .4266666667rem;
     bottom: 1.92rem;
     width: 1.0666666667rem;
     height: 1.0666666667rem;
     background-image: url(../img/db.png);
-    display: block;
+    display: none;
     background-size: 100% 100%;
 }
