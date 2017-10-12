@@ -121,7 +121,7 @@ body,html{
 	background-size:100% 100%;
 }
 /*限时抢*/
-.xsq,.xbjx{
+.xsq,.xbjx,.yhj{
     width: 100%;
     overflow: hidden;
     background: #f5f5f5;
@@ -266,4 +266,8 @@ body,html{
     border-color: #fff #fff transparent transparent;
     -webkit-transform: translate(0,-50%) rotate(45deg);
     transform: translate(0,-50%) rotate(45deg);
+}
+/*商品集*/
+.yhj span.tag-yhj::after{
+	 background-image: url(../img/gwd.png.png);
 }
