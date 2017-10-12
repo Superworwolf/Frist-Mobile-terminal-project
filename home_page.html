@@ -4,16 +4,103 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="components/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="components/Swiper-3.4.2/dist/css/swiper.min.css"/>
-		<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css"/>		
 		<link rel="stylesheet" type="text/css" href="css/home_page.css"/>
 	</head>
 	<body>
+		<!--搜索框-->
 		<div class="container nav">
-		  	
+		  	<div class="logo"></div>
+		  	<div class="search">		  		
+		        <input type="text" class="form-control" id="inputGroup" aria-describedby="inputGroupSuccess2Status" placeholder="请输入搜索的词">
+		  		<span class="input-group"></span>
+		  	</div>
 		</div>
+		<!--头部-->
+		<div class="titles">
+			<div class="intitle">
+				<a href="home_page.html" class="homePage">首页</a>
+				<a href="" class="homePage">社区</a>
+				<a href="" class="icons"><img src="img/people.png" class="imgs"/></a>
+				<a href="" class="icons"><img src="img/gou.png" class="imgs"/></a>
+			</div>			
+		</div>
+		<!--      轮播图部分          -->
+		<div class="swiper-container swiper-container-horizontal" id="swiper-container1" >
+			<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+				<div class="swiper-slide blue-slide swiper-slide1 swiper-slide-active picture1 picture"></div>
+				<div class="swiper-slide red-slide swiper-slide-next picture2 picture"></div>
+				<div class="swiper-slide orange-slide picture3 picture"></div>
+				<div class="swiper-slide orange-slide picture4 picture"></div>
+				<div class="swiper-slide orange-slide picture5 picture"></div>
+			</div>
+			<div class="swiper-pagination swiper-pagination-bullets">
+				<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+				<span class="swiper-pagination-bullet"></span>
+				<span class="swiper-pagination-bullet"></span>
+				<span class="swiper-pagination-bullet"></span>
+				<span class="swiper-pagination-bullet"></span>
+			</div>
+		</div>
+		<!--限时抢-->
+		<div class="xsq" id="xsqList">
+            <div class="bt-title"><span class="tag-xsq ">限时抢</span></div>
+            <div class="xsq-list">            
+                <a class="item" href="https://m.ymatou.com/evt2/n5064?ProductId=52b90019-b2f4-4e47-8b36-1302a28a29fa&amp;TabType=1&amp;TabId=b50f9152-8bd3-420b-aa8e-a334379ee882" module_index="" module_name="time-limitedbuy" onclick="" bannerid="1" title="POLA WRINKLE SHOT祛皱精华液 去皱精华 除皱抹平眼纹干纹细纹20g">
+                    <div class="pic" style="background-image:url(http://pic1.ymatou.com/G02/M08/FB/E5/CgvUA1ncLGOAF9x5AAB-LoSdhRI103_28_13_w_o.jpg);"></div>
+                    <div class="xsq-countdown">仅剩 <i class="xsq-countdown-time">00:27:27</i></div>
+                </a>     
+                <a class="item" href="https://m.ymatou.com/evt2/n5064?ProductId=61ed1ec9-3678-4a05-8663-d0b302d9b8c0&amp;TabType=1&amp;TabId=b50f9152-8bd3-420b-aa8e-a334379ee882" module_index="" module_name="time-limitedbuy" onclick="" bannerid="2" title="韩国CJ innerb rich胶原蛋白金色玻尿酸 补水加强版胶囊56粒">
+                    <div class="pic" style="background-image:url(http://pic1.ymatou.com/G02/M01/FB/E9/CgvUA1ncLKyAFkjJAACVm2rpVx4287_28_13_w_o.jpg);"></div>
+                    <div class="xsq-countdown">仅剩 <i class="xsq-countdown-time">00:27:27</i></div>
+                </a>           
+                <a class="item" href="https://m.ymatou.com/evt2/n5064?ProductId=9de1d03a-059d-49c6-a3e2-210a091f42c0&amp;TabType=1&amp;TabId=b50f9152-8bd3-420b-aa8e-a334379ee882" module_index="" module_name="time-limitedbuy" onclick="" bannerid="3" title="日本沢井制药 吸入式鼻过敏症喷剂 鼻炎打喷嚏流鼻涕 成人儿童">
+                    <div class="pic" style="background-image:url(http://pic1.ymatou.com/G02/M01/03/4A/CgvUBVncLGSAZUKkAACJYa2H77M861_28_13_w_o.jpg);"></div>
+                    <div class="xsq-countdown">仅剩 <i class="xsq-countdown-time">00:27:27</i></div>
+                </a>             
+                <a class="item" href="https://m.ymatou.com/evt2/n5064?ProductId=795c6f2c-cdcc-4254-b92b-3c85d7d5c0c0&amp;TabType=1&amp;TabId=b50f9152-8bd3-420b-aa8e-a334379ee882" module_index="" module_name="time-limitedbuy" onclick="" bannerid="4" title="GUCCI 古琦古驰罪爱(原罪)男士淡香水">
+                    <div class="pic" style="background-image:url(http://pic1.ymatou.com/G02/M0A/FB/E9/CgvUA1ncLLiAPXPJAACAnc4vAQg989_28_13_w_o.jpg);"></div>
+                    <div class="xsq-countdown">仅剩 <i class="xsq-countdown-time">00:27:27</i></div>
+                </a>
+                <a class="item" href="https://m.ymatou.com/evt2/n5064?ProductId=d2c08226-04df-47f4-b849-0c8bfc6a4637&amp;TabType=1&amp;TabId=b50f9152-8bd3-420b-aa8e-a334379ee882" module_index="" module_name="time-limitedbuy" onclick="" bannerid="5" title="Coach男包 斜挎包男士 单肩包 片包尺寸约：29*28">
+                    <div class="pic" style="background-image:url(http://pic1.ymatou.com/G02/M08/03/4A/CgvUBVncLHGAAlb6AACNrTpVBUM325_28_13_w_o.jpg);"></div>
+                    <div class="xsq-countdown">仅剩 <i class="xsq-countdown-time">00:27:27</i></div>
+                </a>
+                <a class="item" href="https://m.ymatou.com/evt2/n5064?ProductId=30bb8653-b957-4605-a403-893513cfe1ec&amp;TabType=1&amp;TabId=b50f9152-8bd3-420b-aa8e-a334379ee882" module_index="" module_name="time-limitedbuy" onclick="" bannerid="6" title="玖熙nine west毛绒珍珠拖鞋，35/36选s，37/38选m，39/40选L">
+                    <div class="pic" style="background-image:url(http://pic1.ymatou.com/G02/M01/01/CB/CgvUBFncLLWAFvoAAAB9824aXnk888_28_13_w_o.jpg);"></div>
+                    <div class="xsq-countdown">仅剩 <i class="xsq-countdown-time">00:27:27</i></div>
+                </a>               
+            </div>
+        </div>
+        <!--小编精选-->
+        <div class="xbjx">
+            <div class="bt-title"><span class="tag-xbjx">小编精选</span></div>
+            <div class="content goto-xbjx" onclick="">
+                <img src="http://pic1.ymatou.com/G02/M00/4F/34/CgvUBVm_qY2AQLKHAACwW6gCBm0675_75_29_o.jpg" width="100%" alt="来自天然的滋养">
+                <div class="desc">
+                    <div class="text">
+                        <h2>来自天然的滋养</h2>
+                        <a href="//m.ymatou.com/topic/forBuyerApp/topic/newProductList" class="btn-more" module_index="" module_name="xiaobianjingxuan" onclick="">查看更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 		<script src="components/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="components/Swiper-3.4.2/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="components/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script language="javascript"> 
+			var mySwiper = new Swiper('.swiper-container',{
+			pagination : '.swiper-pagination',
+			})
+			$('#btn1').click(function(){
+			$(".swiper-wrapper .swiper-slide1").remove(); 
+			})
+			$('#btn2').click(function(){
+			mySwiper.update(true)
+			alert('更新成功');
+			})
+		</script>
 	</body>
 </html>
