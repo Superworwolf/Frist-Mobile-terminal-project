@@ -10,6 +10,113 @@
 	<link rel="stylesheet" href="css/register.css"/>
 </head>
 <body>
-	       <>
+  <div class="title">
+  	<span></span>
+  	<span>注册</span>
+  </div>       
+  <div class="register-box">
+  	<form class="registerform">
+  		<div><input placeholder="输入用户名" name="username"/></div>
+  		<p class="usermessage">请输入3-16位字符</p>
+  		<div><input placeholder="请输入密码" name="password"/></div>
+  		<p class="passmessage">密码为6至12位数字或字母</p>
+  		<div><input placeholder="确认密码" name="surepassword"/></div>
+  		<p class="suremessage">密码与上述不符</p>
+  		<div><input placeholder="输入验证码" name="inpqrcode"/ ><span class="qrcode"></span></div>
+  		<p class="qrcodemessage">验证码输入错误</p>
+  		<div class="ymatoumessage">注册即视为同意<a href="#">《洋码头用户协议》</a></div>
+  		<input type="submit" value="注册" />
+  	</form>
+  </div>
+  <script type="text/javascript" src="components/jquery-3.2.1.min.js" ></script>
+  <script>
+  	
+	function madeqrcode(){
+	var n = 65+parseInt(Math.random()*26);
+  	var m = 97+parseInt(Math.random()*26);
+	var a = parseInt(Math.random()*2);
+	var oInput = document.querySelector("input")
+	if (a==0) {
+		a = n;
+	}else{
+		a = m;
+	}
+	return a;
+	}
+  	$(".qrcode").text(String.fromCharCode(madeqrcode(),madeqrcode(),madeqrcode(),madeqrcode()));
+  	$(".qrcode").on("touchstart",function(){
+  		$(".qrcode").text(String.fromCharCode(madeqrcode(),madeqrcode(),madeqrcode(),madeqrcode()));
+  	});
+  	$(".registerform div").on("touchstart",function(event){
+  		event.preventDefault();
+  		$(this).children("input").focus();
+  	});
+  	$("input[type=submit]")[0].disabled = "true";
+  	$("input[type=submit]").on("touchstart",function(){
+  		formVerification();
+  		submitver();
+  		var ousernamevalue = document.querySelector("input[name=username]").value;
+  		var passwordvalue = document.querySelector("input[name=password]").value;
+		if ($("input[type=submit]")[0].disabled == null) {
+  			$.post('http://h6.duchengjiu.top/shop/api_user.php',{
+	  status: 'register',
+      username: ousernamevalue,
+      password: passwordvalue,
+	},function(json){
+		console.log(json.message);
+	})
+			}
+  	})
+  	function formVerification(){
+  		var oUserName = document.querySelector("input[name=username]");
+  		var ousernamevalue = oUserName.value;
+  		var passwordvalue = document.querySelector("input[name=password]").value;
+  		var passsurevalue = document.querySelector("input[name=surepassword]").value;
+  		var qrcodevalue = document.querySelector(".qrcode").innerText;
+  		var inpqrcode = document.querySelector("input[name=inpqrcode]").value;
+		if (!(/^[a-z0-9_-]{3,16}$/.test(ousernamevalue))) {
+  			$(".usermessage").css({"display":"block"});
+		}else{
+			$(".usermessage").css({"display":"none"});
+		}
+		if (!(/^[a-z0-9_-]{6,18}$/.test(passwordvalue))) {
+			$(".passmessage").css({"display":"block"});
+		}else{
+			$(".passmessage").css({"display":"none"});
+		}
+		if (passsurevalue!=passwordvalue) {
+			$(".suremessage").css({"display":"block"});
+		}else{
+			$(".suremessage").css({"display":"none"});
+		}
+		if (!inpqrcode) {
+			$(".qrcodemessage").text("请输入验证码").css({"display":"block"});
+		}else if(inpqrcode.toLowerCase()!=qrcodevalue.toLowerCase()){
+			$(".qrcodemessage").text("验证码输入错误").css({"display":"block"});
+		}else{
+			$(".qrcodemessage").css({"display":"none"});
+		}
+  	}
+  	function submitver(){
+  		var oUserName = document.querySelector("input[name=username]");
+  		var ousernamevalue = oUserName.value;
+  		var passwordvalue = document.querySelector("input[name=password]").value;
+  		var passsurevalue = document.querySelector("input[name=surepassword]").value;
+  		var qrcodevalue = document.querySelector(".qrcode").innerText;
+  		var inpqrcode = document.querySelector("input[name=inpqrcode]").value;
+  		if ((/^[a-z0-9_-]{3,16}$/.test(ousernamevalue)&&
+  		    (/^[a-z0-9_-]{6,18}$/.test(passwordvalue))&&
+  		    (passsurevalue==passwordvalue)&&
+  		    (inpqrcode.toLowerCase()==qrcodevalue.toLowerCase()))) {
+  			$("input[type=submit]")[0].disabled = null;
+  		}else{
+  			$("input[type=submit]")[0].disabled = "true";
+  		}
+  	}
+  	$("input").on("blur",function(){
+  		formVerification();
+  		submitver();
+  	})
+  </script>
 </body>
 </html>

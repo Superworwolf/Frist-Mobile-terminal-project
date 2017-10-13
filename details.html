@@ -175,6 +175,18 @@
       <script type="text/javascript" src="components/swiper.animate1.0.2.min.js"></script>
       <script type="text/javascript" src="js/home-page-ajax.js" ></script>
       <script>
+      	//获取goods_id
+      	$.getQueryString = function(name) {
+		  var search = location.search.substr(1);
+		  var reg = new RegExp('(&|^)'+name+'=([^&]*)(&|$)');
+		  var r = search.match(reg);
+		  if (r === null) return null;
+		  return decodeURI(r[2]);
+		};
+		var goods_id = $.getQueryString("goods_id");
+      	
+      	
+      	
       	var mySwiper = new Swiper(".swiper-container",{
       		initialSlide :0,			//设置初始化时 slide的索引
 		    direction: 'horizontal',		//设置slide的滑动方向，vertical表示垂直，horizontal表示水平
@@ -262,7 +274,8 @@
 			num = parseInt(num);
       		$(this).val(num);
       	});
-      	$.get('http://h6.duchengjiu.top/shop/api_goods.php?goods_id=33710',{},function (json){
+      	
+      	$.get("http://h6.duchengjiu.top/shop/api_goods.php?goods_id="+goods_id,{},function (json){
 				var obj = json.data[0];
 				console.log(obj);
 				$(".slide1").css({"background":"url("+obj.goods_thumb+")","backgroundSize":"100%"});
