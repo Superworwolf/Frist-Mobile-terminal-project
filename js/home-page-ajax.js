@@ -4,7 +4,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":45},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str1 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str1 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str1 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product1").append(str1);
@@ -14,7 +14,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":55},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str2 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str2 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str2 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product2").append(str2);
@@ -24,7 +24,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":62},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str3 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str3 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str3 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product3").append(str3);
@@ -34,7 +34,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":69},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str4 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str4 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str4 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product4").append(str4);
@@ -44,7 +44,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":82},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str5 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str5 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str5 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product5").append(str5);
@@ -54,7 +54,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":77},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str6 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str6 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str6 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product6").append(str6);
@@ -64,7 +64,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":92},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str7 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str7 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str7 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product7").append(str7);
@@ -74,7 +74,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":125},function  (js
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str8 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str8 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str8 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product8").append(str8);
@@ -87,7 +87,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"page":page},function(json)
 	var data = json.data;
 	for (var i=0;i<data.length;i++) {
 		var obj = data[i];
-		strList +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</><span class="price">¥${obj.price}</span></div></a></li>`
+		strList +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</p><span class="price">¥${obj.price}</span></div></a></li>`
 	};
 	$("#productList").append(strList);	
 })
@@ -103,7 +103,7 @@ $("#loadmore").on("touchstart",function() {
 		var data = json.data;
 		for (var i=0;i<data.length;i++) {
 			var obj = data[i];
-			strmore +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</><span class="price">¥${obj.price}</span></div></a></li>`
+			strmore +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</p><span class="price">¥${obj.price}</span></div></a></li>`
 		};
 		$("#productList").append(strmore);
 		if (pages>10) {
@@ -112,6 +112,17 @@ $("#loadmore").on("touchstart",function() {
 		}
 	})
 })
+//等待效果
+function loading (){
+	$("#loading").hide();
+	$(document).ajaxStart(function  () {
+		$("#loading").show();
+	}).ajaxStop(function  () {
+		$("#loading").hide();
+	})
+};
+loading();
+
 //回到顶部
 window.onscroll=function(){
     if($(window).scrollTop()>100){
@@ -142,5 +153,29 @@ function scroll(scrollTo, time) {
         }
     }, runEvery);
 }
+//搜索
+var searchs = $("#inputGroups");
+var oInput = $("#inputGroup");
+var inputText;
+searchs.on("touchstart",function  () {
+	inputText = oInput[0].value;
+	console.log(inputText);
+	if (inputText === "") {
+		alert("请输入要搜索的商品");
+	} else{
+		window.location.href = "search.html?search_text="+inputText;
+	}
+	
+});
+//oInput.on("blur",function  () {
+//	inputText = oInput[0].value;
+//	console.log(inputText);
+//	
+//}) 
 
-
+oInput.on("keyup",function  (event) {
+	if (event.keyCode === 13) {
+		
+		window.location.href = "search.html?search_text="+this.value;
+	}
+});

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="components/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="components/Swiper-3.4.2/dist/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="components/Swiper-3.4.2/dist/css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css"/>		
+		<link rel="stylesheet" type="text/css" href="css/search.css"/>
+	</head>
+	<body>
+		<!--搜索框-->
+		<div class="container nav">
+		  	<div class="logo"></div>
+		  	<div class="search">		  		
+		        <input type="text" class="form-control" id="inputGroup" aria-describedby="inputGroupSuccess2Status" placeholder="请输入搜索的词">
+		  		<span class="input-group" id="inputGroups"></span>
+		  	</div>
+		</div>
+		<!--头部-->
+		<div class="titles">
+			<div class="intitle">
+				<a href="home_page.html" class="homePage">首页</a>
+				<a href="" class="homePage">社区</a>
+				<a href="" class="icons"><img src="img/people.png" class="imgs"/></a>
+				<a href="" class="icons"><img src="img/gou.png" class="imgs"/></a>
+			</div>			
+		</div>
+		<!--显示搜索商品-->
+        <div class="interested">
+        	<ul class="product-list" id="productList">
+        	</ul>
+        </div>
+         <!--loading-->
+        <div class="load-more">
+            <div id="loading">
+            </div>
+        </div>
+        <!--查看更多-->
+        <div class="btn-like-more" id="loadmore">加载更多</div>
+        <!--加载完成-->
+        <div class="btn-like-more-over" id="moreover">已加载完~</div>
+        <!--底部-->
+        <div class="footer">
+            <div class="text">
+            	<a class="download-suohuoapp" onclick="">客户端</a> | 
+            	<a href="//m.ymatou.com/home/ymt-about" onclick="">关于洋码头</a> | 
+            	<a href="//m.ymatou.com/home/ymt-media" onclick="">媒体报道</a></div>
+            <div class="desc">上海洋码头网络技术有限公司 版权所有</div>
+        </div>
+		<script src="components/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="components/Swiper-3.4.2/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="components/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="components/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/search.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
