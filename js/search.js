@@ -16,7 +16,11 @@ var oInput = $("#inputGroup");
 var inputText;
 searchs.on("touchstart",function  () {
 	inputText = oInput[0].value;
-	window.location.href = "search.html?search_text="+inputText;
+	if (inputText === "") {
+		alert("请输入要搜索的商品");
+	} else{
+		window.location.href = "search.html?search_text="+inputText;
+	}
 });
 //oInput.on("blur",function  () {
 //	inputText = oInput[0].value;
@@ -42,7 +46,7 @@ function showProduct (page) {
 		} else{
 			for (var i=0;i<data.length;i++) {
 			var obj = data[i];
-			strList +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</p><span class="price">¥${obj.price}</span></div></a></li>`
+			strList +=`<li class="product-wrapper"><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</p><span class="price">¥${obj.price}</span></div></a></li>`
 			};
 			$("#productList").append(strList);	
 		};		
@@ -62,7 +66,7 @@ $("#loadmore").on("touchstart",function() {
 		} else{
 			for (var i=0;i<data.length;i++) {
 			var obj = data[i];
-			strmore +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</p><span class="price">¥${obj.price}</span></div></a></li>`
+			strmore +=`<li class="product-wrapper"><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</p><span class="price">¥${obj.price}</span></div></a></li>`
 			};
 			$("#productList").append(strmore);
 		};
