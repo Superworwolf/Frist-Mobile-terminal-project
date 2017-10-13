@@ -1,5 +1,7 @@
 $('.My-order').on('touchstart',function(){
-	if($("#orderclass")[0].style.display != "block") {
+	if(localStorage.token === "") {
+		return
+	}else if($("#orderclass")[0].style.display != "block") {
 		$(".order-arrow").css("transform","rotate(90deg)")
 		$("#orderclass").css("display","block")
 var oOrder = document.querySelector('#order');
@@ -36,6 +38,12 @@ var oOrder = document.querySelector('#order');
 	}
 });
 $('.My-address').on('touchstart',function(){
+		if(localStorage.token === "") {
+			
+		return
+	}else if($("#address-ul")[0].style.display != "block") {
+		$(".address-arrow").css("transform","rotate(90deg)")
+		$("#address-ul").css("display","block")
 	$.get('http://h6.duchengjiu.top/shop/api_useraddress.php',
         {token: localStorage.token},
         function(json) {
@@ -50,9 +58,9 @@ $('.My-address').on('touchstart',function(){
             var obj = data[i];
             oAddressUl.innerHTML += `
                             <li data-id="${obj.address_id}">
-                              <span>收货人：${obj.consignee}</span><span name="delete" class="delete" data-id="${obj.address_id}">删除</span><br />
-                              <span>手机：${obj.mobile}</span><br />
-                              <span>地址：${obj.address}</span>
+                              <span class="sp-add"><b>收货人：</b>${obj.consignee}</span><span name="delete" class="delete" data-id="${obj.address_id}"></span><br />
+                              <span class="sp-add"><b>手机：</b>${obj.mobile}</span><br />
+                              <span class="sp-add"><b>地址：</b>${obj.address}</span>
                             </li>
             `;
           }
@@ -62,11 +70,9 @@ $('.My-address').on('touchstart',function(){
       oAddressUl.onclick = function(event) {
         event = event || window.event;
         var target = event.target || event.srcElement;
-        console.log(target.nodeName);
         if (target.className === 'delete') {
           confirm('确认要删除收货地址吗？',function(){
             var address_id = target.dataset.id;
-          console.log(address_id);
           $.get('http://h6.duchengjiu.top/shop/api_useraddress.php',
           {status: 'delete', address_id, token: localStorage.token}, function(json){
             if (json.code === 0) {
@@ -91,4 +97,24 @@ $('.My-address').on('touchstart',function(){
 
         }
       }
+      }else {
+		var oAddress = document.querySelector('.address-ul');
+		$("#address-ul").css("display","none")
+		$(".address-arrow").css("transform","rotate(0deg)")
+		oAddress.style.display = "none";
+	}
 });
+$('#Sign-out').on('touchstart',function(){
+	localStorage.token = "";
+	localStorage.username = "";
+	location.reload();
+});
+if(localStorage.token != "") {
+	$("#user").html(localStorage.username);
+	$("#user")[0].href = "#";
+	$("#Sign-out").css("display","block");
+}else{
+	$("#user").html("请登录");
+	$("#user")[0].href = "login.html";
+	$("#Sing-out").css("display","none");
+}

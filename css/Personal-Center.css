@@ -97,6 +97,7 @@ body{
 	height: 1.1rem;
 	background-size: 100% 100%;
 	margin: 1rem .7rem 1rem 1rem;
+	transition: all .3s;
 }
 .address-arrow{
 	background-image: url("../img/p_arrowright-23118a5433.png");
@@ -105,6 +106,7 @@ body{
 	height: 1.1rem;
 	background-size: 100% 100%;
 	margin: 1rem .7rem 1rem 1rem;
+	transition: all .3s;
 }
 .my-order-list{
 	display: none;
@@ -172,8 +174,10 @@ body{
 	line-height: 3rem;
 	font-size: .5rem;
   }
-#order{
-	text-align: center;
+#order h3{
+	width: 100%;
+	font-size: 1rem;
+	text-align: center;	
 }
 .confirm {
   width: 12rem;
@@ -206,12 +210,71 @@ body{
 	float: left;
 	width: 100%;
 }
+.address-ul h3{
+	width: 100%;
+	font-size: 1rem;
+	text-align: center;
+	margin-left:-1.5rem ;
+}
 .address-ul li{
-	background-image: url("../img/2b2e5682fb6cfdb0c3a78404ac465059_03.png");
+	/*background-image: url("../img/2b2e5682fb6cfdb0c3a78404ac465059_03.png");*/
 	background-size: 100% 100%;
 	background-color: #fff;
-	width: 11rem;
-	height: 6rem;
+	border-radius:30px;
+	width: 8rem;
+	height: 4rem;
 	float: left;
-	margin-right:1rem;
+	margin:1rem .3rem 1rem;
+	-webkit-border-image:url("../img/e5639592b178ac215b1b31ee61c9b876.png") 30 30 round;
 }
+.delete{
+	float: right;
+	background-image: url("../img/sanchu.png");
+	background-size: 100% 100%;
+	width: .8rem;
+	height: 1rem;
+	margin-top:.2rem;
+	margin-right:.4rem;
+}
+.address-ul li:nth-child(3n+1){
+	margin-left:-1.2rem;
+}
+.sp-add{
+	float: left;
+	font-size:.5rem;
+	width: 6rem;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	margin-left:.4rem;
+}
+.sp-add b{
+	font-weight: 800;
+}
+.Sign-out{
+	color: #000;
+	font-weight: 800;
+	font-size: .8rem;
+	float: left;
+	line-height: 4.2rem;
+	margin-left: .7rem;
+	display: none;
+}
+#user{
+	color: #fff;
+	text-decoration: none;
+}
+@media (max-width: 330px) { .address-ul li:nth-child(n+1){margin-left:.1rem;} }
+@media(min-width: 330px) and (max-width: 400px) { .address-ul li:nth-child(n+1){margin-left:1.4rem;}}
+@media (min-width: 700px) and (max-width: 1000px){ 
+	html,body{font-size: 40px;}
+	.sp-add{font-size:.8rem;	height: 1.3rem;line-height: 1.5rem;}
+	 .address-ul li:nth-child(n+1){margin-left:.5rem;} 
+	 .order-title{line-height: 1rem;}
+ }
+ @media (min-width: 1000px)and (max-width: 1400px){
+ 	html,body{font-size: 45px;}
+ 	.sp-add{font-size:.8rem;	height: 1.3rem;line-height: 1.5rem;}
+ 	.address-ul li:nth-child(n+1){margin-left:2rem;} 
+ 	.order-title{line-height: 1rem;}
+ 	 }
