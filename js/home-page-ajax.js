@@ -87,7 +87,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"page":page},function(json)
 	var data = json.data;
 	for (var i=0;i<data.length;i++) {
 		var obj = data[i];
-		strList +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</><span class="price">¥${obj.price}</span></div></a></li>`
+		strList +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</p><span class="price">¥${obj.price}</span></div></a></li>`
 	};
 	$("#productList").append(strList);	
 })
@@ -103,7 +103,7 @@ $("#loadmore").on("touchstart",function() {
 		var data = json.data;
 		for (var i=0;i<data.length;i++) {
 			var obj = data[i];
-			strmore +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</><span class="price">¥${obj.price}</span></div></a></li>`
+			strmore +=`<li class="product-wrapper"><a href=""><img src="${obj.goods_thumb}"/><div class="info"><p class="name">${obj.goods_desc}</p><span class="price">¥${obj.price}</span></div></a></li>`
 		};
 		$("#productList").append(strmore);
 		if (pages>10) {
@@ -112,6 +112,17 @@ $("#loadmore").on("touchstart",function() {
 		}
 	})
 })
+//等待效果
+function loading (){
+	$("#loading").hide();
+	$(document).ajaxStart(function  () {
+		$("#loading").show();
+	}).ajaxStop(function  () {
+		$("#loading").hide();
+	})
+};
+loading();
+
 //回到顶部
 window.onscroll=function(){
     if($(window).scrollTop()>100){
@@ -142,5 +153,28 @@ function scroll(scrollTo, time) {
         }
     }, runEvery);
 }
+//搜索
+var searchs = $("#inputGroups");
+var oInput = $("#inputGroup");
+var inputText;
+searchs.on("touchstart",function  () {
+	inputText = oInput[0].value;
+	console.log(inputText);
+	if (inputText === "") {
+		alert("请输入要搜索的商品");
+	} else{
+		window.location.href = "search.html?search_text="+inputText;
+	}
+	
+});
+//oInput.on("blur",function  () {
+//	inputText = oInput[0].value;
+//	console.log(inputText);
+//	
+//}) 
 
-
+oInput.on("keyup",function  (event) {
+	if (event.keyCode === 13) {
+		window.location.href = "search.html?search_text="+this.value;
+	}
+});
