@@ -4,7 +4,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":45},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str1 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str1 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str1 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product1").append(str1);
@@ -14,7 +14,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":55},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str2 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str2 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str2 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product2").append(str2);
@@ -24,7 +24,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":62},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str3 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str3 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str3 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product3").append(str3);
@@ -34,7 +34,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":69},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str4 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str4 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str4 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product4").append(str4);
@@ -44,7 +44,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":82},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str5 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str5 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str5 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product5").append(str5);
@@ -54,7 +54,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":77},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str6 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str6 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str6 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product6").append(str6);
@@ -64,7 +64,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":92},function  (jso
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str7 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str7 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str7 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product7").append(str7);
@@ -74,7 +74,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":125},function  (js
 	var data = json.data;
 	for (var i=0;i<5;i++) {
 		var obj = data[i];
-		str8 +=`<li><a href=""><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
+		str8 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
 	str8 += `<li><a href=""><img src="img/moresp.png"/></a></li>`;
 	$("#product8").append(str8);
@@ -175,6 +175,7 @@ searchs.on("touchstart",function  () {
 
 oInput.on("keyup",function  (event) {
 	if (event.keyCode === 13) {
+		
 		window.location.href = "search.html?search_text="+this.value;
 	}
 });
