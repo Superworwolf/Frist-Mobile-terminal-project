@@ -1,5 +1,5 @@
 body{
-	background-color:#808080;
+	background-color:#F1F1F1;
 }
 .PC-hd{
 	width: 100%;
@@ -21,7 +21,7 @@ body{
 	width: 1.05rem;
 	right: 1rem;
 }
-.hd-bg{
+.bg{
 	position: relative;
 	width: 100%;
 	height: 10.5rem;
@@ -29,11 +29,189 @@ body{
 	background-size:100% 100%;
 	overflow: hidden;
 }
+.bg-center{
+	float: left;
+    margin-left:2.1rem;
+    margin-top:2.4rem;
+}
 .Head-portrait{
 	width: 4.2rem;
 	height: 4.2rem;
 	border-radius: 50%;
-	margin:2.4rem 1rem 1rem 2rem;
+	float: left;
 	background-image: url("../img/share_personal-9287711f0c.png");
 	background-size: 100% 100%;
+}
+.un-load{
+	color: #fff;
+	font-size: 1rem;
+	float: left;
+	line-height: 4.2rem;
+	margin-left: .7rem;
+}
+.bg-foot{
+	width: 100%;
+	height: 3.26rem;
+	float: left;
+	margin-top:.6rem;
+}
+.fans{
+	color: #fff;
+	font-size:.5rem;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	line-height: 3.26rem;
+	float: left;
+}
+.join-day{
+	color: #fff;
+	font-size:.5rem;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	line-height: 3.26rem;
+	float: right;
+}
+.My-order{
+	background-color: #fff;
+	width: 100%;
+	height: 3rem;
+	float: left;
+	margin-top: .75rem;
+	line-height: 3rem;
+	font-size: .5rem;
+}
+.order{
+	float: left;
+	width: 1.3rem;
+	height: 1.4rem;;
+	background-image: url("../img/p_ordericon-67f7e5447d.png");
+	background-size: 100% 100%;
+	margin: .8rem;
+}
+.order-arrow{
+	background-image: url("../img/p_arrowright-23118a5433.png");
+	float: right;
+	width: .6rem;
+	height: 1.1rem;
+	background-size: 100% 100%;
+	margin: 1rem .7rem 1rem 1rem;
+}
+.address-arrow{
+	background-image: url("../img/p_arrowright-23118a5433.png");
+	float: right;
+	width: .6rem;
+	height: 1.1rem;
+	background-size: 100% 100%;
+	margin: 1rem .7rem 1rem 1rem;
+}
+.my-order-list{
+	display: none;
+}
+.orderclass{
+	float: left;
+	background-color: #fff;
+	display: none;
+	font-size: .5rem;
+}
+.order-title{
+	float: left;
+	width: 100%;
+	height: 1rem;
+	background-color: rgba(0,0,0,.1);
+	color: #000;
+}
+.Consignee{
+	float: left;
+	margin-left: .5rem;
+}
+.Consignee b{
+	font-weight: 800;
+}
+.Total b,.orderclass  td b{
+	color: orangered;
+	font-weight: 800;
+}
+.orderclass  td i{
+	color: #FF8C00;
+	font-weight: 800;
+}
+.Total{
+	float: right;
+	margin-right: .5rem;
+}
+.orderclass  td {
+  border: 1px solid #ccc;
+  padding: .2rem;
+  vertical-align: middle;
+  background: #fff;
+  min-width: 3rem; 
+}
+.orderclass > tr{
+	width: 100%;
+	height: 5rem;
+	}
+.orderclass {
+	float: left;
+	height: auto;
+	background: rgba(255,255,255,.4);
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+.orderclass img {
+  border-radius: 50%;
+  width: 100px;
+  }
+  .My-address{
+  	background-color: #fff;
+	width: 100%;
+	height: 3rem;
+	float: left;
+	line-height: 3rem;
+	font-size: .5rem;
+  }
+#order{
+	text-align: center;
+}
+.confirm {
+  width: 12rem;
+  text-align: center;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  margin-left: -90px;
+  top: 50%;
+  padding: 10px 5px;
+  background-color: rgba(0,0,0,.8);
+  color: #fff;
+  box-sizing: border-box;
+}
+.confirm div.title {
+  margin: 10px 0px;
+}
+.confirm span.ok, .confirm span.cancel {
+  display: inline-block;
+  width: 60px;
+  margin-right: 10px;
+  padding: 5px;
+  color: white;
+  background-color: orange;
+  box-sizing: border-box;
+  border: 1px solid orange;
+  border-radius: 30px;
+}
+.address-ul{
+	float: left;
+	width: 100%;
+}
+.address-ul li{
+	background-image: url("../img/2b2e5682fb6cfdb0c3a78404ac465059_03.png");
+	background-size: 100% 100%;
+	background-color: #fff;
+	width: 11rem;
+	height: 6rem;
+	float: left;
+	margin-right:1rem;
 }
