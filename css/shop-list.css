@@ -1,0 +1,40 @@
+.shop-list{
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: 0.7rem;
+}
+.sl-i{
+	margin-left: 0.5rem;
+}
+.list1{
+	width: 100%;
+}
+.list2{
+	width: 100%;
+}
+.cat{
+	width: 100%;
+}
+.cat li{
+	height: 0.7rem;
+	line-height: 0.7rem;
+	width: 20%;
+	font-size: 0.5rem;
+	float: left;
+	text-align: center;
+}
+li:nth-child(8){
+	display: none;
+}
+li:nth-child(9){
+	display: none;
+}
+.cat li a{
+	color: skyblue;
+}
+.hot-goods{
+	font-size: 0.5rem;
+}
+
+
+

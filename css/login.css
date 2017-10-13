@@ -1,0 +1,13 @@
+body{
+	background-color: #F1F1F1;
+}
+.login-hd{
+	width: 100%;
+	height: 3rem;
+	background-color: #fff;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 2.7rem;
+    color: #515151;
+    position: relative;
+}
