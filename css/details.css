@@ -25,12 +25,20 @@ html{
 	  		padding: 0;
 	  		margin: 0;
 	  		height: 100%;
+	  		padding-right: .5rem;
 	  	}
 	  	.nav-bar > ul >li{
 	  		float: left;
 	  	}
-	  	.nav-bar > ul >li:nth-child(1){
-	  		margin-right: .8rem;
+	  	
+	  	.nav-bar > ul >li:nth-child(4){
+	  		float: right;
+	  	}
+	  	.nav-bar > ul >li:nth-child(3){
+	  		float: right;
+	  	}
+	  	.nav-bar > ul >li:nth-child(2){
+	  		float: right;
 	  	}
 	  	.nav-bar > ul > .logo{
 	  		width: 171px;
@@ -611,4 +619,19 @@ html{
     background-position: center center;
     background-size: 100% 100%;
     background-image: url(../img/time.png);
+}
+#shopmessage{
+	width: 80%;
+	height: 10rem;
+	background: rgba(0,0,0,.5);
+	color: #fff;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 50%;
+	margin-top: -5rem;
+	z-index: 100;
+	line-height: 10rem;
+	text-align: center;
+	display: none;
 }

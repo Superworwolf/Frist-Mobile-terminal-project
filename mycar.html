@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>注册洋码头</title>
+    <link rel="stylesheet" href="components/reset.css"/>
+    <link rel="stylesheet" href="components/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/mycar.css">
+</head>
+<body>
+    <div class="shopcart">
+        <div class="topbar">
+            <div class="top-title">
+                购物车<b>(1)</b>
+            </div>
+            <div class="top-home">
+                <a href=""><img src="img/3.png" alt=""></a>
+            </div>
+            <div class="top-user">
+                <a href=""><img src="img/2.png" alt=""></a>
+            </div>
+        </div>
+        <div class="nottice">
+            海外买手会根据现行国家政策要求，通过不同的物流方式分别发货，其实对你没有影响啦~
+        </div>
+        <div></div>
+    </div>
+    <div id="shopList" class="shop-list">
+
+    </div>
+    <!--*********猜你喜欢**************-->
+    <div class="cnxh">
+        <div class="bt-title"><span class="tag-yhj">猜你喜欢</span></div>
+    </div>
+    <div class="interested">
+        <ul class="product-list" id="productList">
+        </ul>
+    </div>
+    <!--查看更多-->
+    <div class="btn-like-more" id="loadmore">加载更多</div>
+    <!--加载完成-->
+    <div class="btn-like-more-over" id="moreover">已加载完~</div>
+    <!--loading-->
+    <div class="load-more">
+        <div id="loading">
+        </div>
+    </div>
+    <!--底部-->
+    <div class="footer">
+        <div class="text">
+            <a class="download-suohuoapp" onclick="">客户端</a> |
+            <a href="//m.ymatou.com/home/ymt-about" onclick="">关于洋码头</a> |
+            <a href="//m.ymatou.com/home/ymt-media" onclick="">媒体报道</a></div>
+        <div class="desc">上海洋码头网络技术有限公司 版权所有</div>
+    </div>
+        <div class="operate">
+            <div class="btn-choose">
+                <input type="checkbox" class="round1">
+                <span class="text">全选</span>
+            </div>
+            <div class="desc">
+                <span class="price">总价 : <b id="total">¥ 0</b></span><br>
+                <span class="carriage">(不含运费)</span>
+            </div>
+            <div class="btn-goorder disabled">
+                <a href="" class="settlement">去结算</a>
+            </div>
+        </div>
+    <script src="myajax.js"></script>
+    <script src="components/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/home-page-ajax.js" ></script>
+    <script type="text/javascript" src="confirm.js" ></script>
+    <script src="myajax2.js"></script>
+
+    <script>
+
+            var oShopList = document.querySelector("#shopList");
+            var oTotal = document.querySelector('#total');
+         $.get('http://h6.duchengjiu.top/shop/api_cart.php',{token:localStorage.token},function (json) {
+            var data = json.data;
+            var sum = 0;
+            for (i = 0; i < data.length; i++) {
+                var obj = data[i];
+                console.log(obj);
+                sum += obj.goods_price * obj.goods_number;
+                
+                console.log(sum);
+				console.log(obj.goods_number);
+				var goodspricess = obj.goods_price*obj.goods_number;
+ 
+                oShopList.innerHTML += `
+                <div>
+                     <input type="checkbox" class="round">
+                    <img src="${obj.goods_thumb}" id="goods_img" />
+                    <div id="shopListRight" class="shop-list-right">
+
+                        <div class="shop-list-right-one">
+                            <span>售价</span>
+                            <em id="goods_price">￥${goodspricess}</em>
+                            <p style="display: none">${obj.goods_id}</p>
+                        </div>
+                        <div class="shop-list-right-two">
+                            <span>数量</span>
+                            <a class="left-button" id="leftButton">-</a>
+                            <input class="center-text" id="centerText" value=${obj.goods_number}>
+                            <a class="right-button" id="rightButton">+</a>
+                            <span class="deletestyle" name="delete" data-id="${obj.goods_id}">删除</span>
+                        </div>
+                        <div class="shop-list-right-three">
+                            <p><img src="img/4.png" style="width: .8rem;" alt="">假一赔十</p><p><img src="img/5.png" style="width: .8rem;" alt="">拼邮</p><p><img src="img/6.png" style="width: .8rem;" alt="">售后无忧</p>
+                        </div>
+                    </div>
+                    </div>
+                `;
+            }
+             var allSum = 0;
+             function allsum () {
+                 var oSums = document.querySelectorAll('#goods_price');
+                 var deleteStyle = document.querySelectorAll(".round");
+                 var sum = 0;
+                 for (var o = 0; o < oSums.length; o++) {
+                     if (deleteStyle[o].checked) {
+                         sum += parseInt(oSums[o].innerText.substr(1));
+                     }
+                 }
+                 console.log(sum);
+                 $(".price").text(sum);
+                 localStorage.sum = sum;
+                 if (sum!=0) {
+                     var oSettleMent = document.querySelector(".settlement");
+                     oSettleMent.href = "Myorder.html";
+                 }
+                 oTotal.innerText = "¥ " + sum;
+                 allSum = parseInt(oTotal.innerHTML);
+             }
+
+             var oRound1 = document.querySelector(".round1");
+             var oRound = document.querySelectorAll(".round");
+             var state = 0;
+             oRound1.onclick = function () {
+                 for(var i = 0; i<oRound.length;i++){
+                     oRound[i].checked = oRound1.checked;
+                 }
+                 allsum();
+             }
+             for(var i = 0 ; i<oRound.length;i++){
+                 oRound[i].onclick = function () {
+                     allsum();
+                     for(var k = 0 ; k < oRound.length;k++){
+                         if (!(oRound[k].checked)) {
+                             oRound1.checked = false;
+                             return;
+                         }
+                         if (oRound[k].checked) {
+                             oRound1.checked = true;
+                         }
+                     }
+                 }
+             }
+            var deleteStyle = document.querySelectorAll(".deletestyle");
+            for (var n = 0; n < deleteStyle.length; n++) {
+                deleteStyle[n].style.border = "none";
+                deleteStyle[n].style.cursor = "pointer";
+                deleteStyle[n].style.background = "transparent";
+                (function (n) {
+                    deleteStyle[n].onmouseover = function () {
+                        deleteStyle[n].style.color = "red";
+                    };
+                    deleteStyle[n].onmouseout = function () {
+                        deleteStyle[n].style.color = "#000";
+                    }
+                }(n));
+            }
+             allsum()
+        });
+            oShopList.addEventListener('click',function(evt){
+                evt = evt || window.evt;
+                var target = evt.target || evt.srcElement;
+                console.log(target.className);
+                if (target.className === 'deletestyle') {
+                    confirm("确认要删除吗?",function(){
+                                console.log("删除成功");
+                                var goods_id = target.dataset.id;
+                                console.log(goods_id);
+                                var number = 0;
+                                myajax.post('http://h6.duchengjiu.top/shop/api_cart.php?token='+localStorage.token,{goods_id,number},(err,responseText) => {
+                                    var json = JSON.parse(responseText);
+                                if (json.code === 0) {
+                                    var tr = target.parentNode.parentNode;
+                                    tr.parentNode.removeChild(tr);
+                                        
+                                    location.reload();
+                                    allsum();
+                                }
+                            });
+                            },function(){
+                                console.log("取消删除");
+                            }
+                    );
+                }
+            })
+
+    </script>
+</body>
+</html>
