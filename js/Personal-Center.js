@@ -1,5 +1,5 @@
 $('.My-order').on('touchstart',function(){
-	if(localStorage.token === "") {
+	if(localStorage.token === ""||localStorage.token == "undefined") {
 		return
 	}else if($("#orderclass")[0].style.display != "block") {
 		$(".order-arrow").css("transform","rotate(90deg)")
@@ -38,7 +38,7 @@ var oOrder = document.querySelector('#order');
 	}
 });
 $('.My-address').on('touchstart',function(){
-		if(localStorage.token === "") {
+		if(localStorage.token === "" ||localStorage.token == "undefined") {
 			
 		return
 	}else if($("#address-ul")[0].style.display != "block") {
@@ -109,12 +109,18 @@ $('#Sign-out').on('touchstart',function(){
 	localStorage.username = "";
 	location.reload();
 });
-if(localStorage.token != "") {
-	$("#user").html(localStorage.username);
-	$("#user")[0].href = "#";
-	$("#Sign-out").css("display","block");
-}else{
+if(localStorage.token == "undefined") {
 	$("#user").html("请登录");
 	$("#user")[0].href = "login.html";
 	$("#Sing-out").css("display","none");
-}
+}else if(localStorage.token != "") {
+	$("#user").html(localStorage.username);
+	$("#user")[0].href = "#";
+	$("#Sign-out").css("display","block");
+	$(".Head-portrait").css("background-image","url('img/default.png')")
+}else if(localStorage.token === ""){
+	$("#user").html("请登录");
+	$("#user")[0].href = "login.html";
+	$("#Sing-out").css("display","none");
+	
+} 

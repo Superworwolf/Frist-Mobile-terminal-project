@@ -11,7 +11,29 @@
 	</head>
 	<body>
 		<header class="login-hd">
-			
+			<a class="login-arrow" ontouchstart="javascript:history.go(-1);"></a>
+			登录
 		</header>
+		<div class="user-information">
+			<input type="text" name="username" id="login-name" placeholder="输入用户名/邮箱/手机号码"/>
+			<input type="password" name="password" id="PassWord" placeholder="输入登录密码"/>
+			<div class="check-box"><input type="checkbox" checked="checked" id="auto-login">&nbsp<label id="AutoLogin" for="auto-login"><span class="auto-login-text">两周内免登陆</span></div>
+			<div class="red-checkbox" id="red-checkbox" style="background-color: #C33"><i class="red-ball" id="red-ball"></i></div></label>
+			<input type="submit" value="登录" class="Login-immediately" id="Login-immediately">
+			<!--//这是显示或隐藏密码的html，开始-->
+			<div class="showorhidden">
+				  <i class="ball"></i>
+				  <span class="show-password">abc</span>
+				  <span class="hidden-password">...</span>
+			</div>
+			<!--//这是显示或隐藏密码的html，结束-->
+			<div class="A-box">
+			<a href="register.html" class="jump-A">快速注册</a>
+			<a href="#" class="down-A">下载app找回密码</a>
+			</div>
+			</div>
+			<script src="components/jquery-3.2.1.min.js"></script>
+			<script src="components/toast.js"></script>
+			<script src="js/login.js"></script>
 	</body>
 </html>
