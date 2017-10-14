@@ -1,31 +1,64 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>社区首页</title>
-	<link rel="stylesheet" type="text/css" href="components/reset.css"/>
-	<link rel="stylesheet" type="text/css" href="css/shop-list.css"/>
-</head>
-<body>
-	<div class="shop-list">
-		<img class="sl-i" src="img/list-logo.png"/>&nbsp商品列表
-	</div>
-	<!--分类-->
-	<div class = "list1">
-		<ul class="cat" id="cat">
-		</ul>
-	</div>
-	<!--商品-->
-	<div class="list2">
-        <ul class="hot-goods" id="hot-goods">
-        </ul>
-   </div>
-    
-    
-</body>
-	<script src="myajax.js" charset="UTF-8" ></script>
-	<script src="components/jquery-3.2.1.min.js" charset="UTF-8" ></script>
-	<script src="js/shop-list.js" charset="UTF-8" ></script>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--<meta http-equiv="X-UA-Compatible" content="ie=edge" />-->
+		<title>社区首页</title>
+		<link rel="stylesheet" type="text/css" href="components/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="components/Swiper-3.4.2/dist/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="components/Swiper-3.4.2/dist/css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css"/>		
+		<link rel="stylesheet" type="text/css" href="css/shop-list.css"/>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="titles">
+			<div class="intitle">
+				<a href="home_page.html" class="homePage">首页</a>
+				<a href="" class="icons"><img src="img/people.png" class="imgs"/></a>
+				<a href="" class="icons"><img src="img/gou.png" class="imgs"/></a>
+			</div>			
+		</div>
+		<!--logo-->
+		<!--<div class="shop-list">
+			<img class="sl-i" src="img/list-logo.png"/>&nbsp商品列表
+		</div>-->
+		<!--分类-->
+		<div class = "list1">
+			<ul class="cat" id="cat">
+			</ul>
+		</div>
+		<!--商品-->
+		<div class="list2">
+	        <ul class="hot-goods" id="hot_goods">
+	        </ul>
+	  </div>
+	   <!--loading-->
+        <div class="load-more">
+            <div id="loading">
+            </div>
+        </div>
+        <!--查看更多-->
+        <div class="btn-like-more" id="loadmore">加载更多</div>
+        <!--加载完成-->
+        <div class="btn-like-more-over" id="moreover">已加载完~</div>
+       
+        <!--底部-->
+        <div class="footer">
+            <div class="text">
+            	<a class="download-suohuoapp" onclick="">客户端</a> | 
+            	<a href="//m.ymatou.com/home/ymt-about" onclick="">关于洋码头</a> | 
+            	<a href="//m.ymatou.com/home/ymt-media" onclick="">媒体报道</a></div>
+            <div class="desc">上海洋码头网络技术有限公司 版权所有</div>
+        </div>  
+	
+		
+		<script src="components/jquery-3.2.1.min.js" charset="UTF-8" ></script>
+		<script src="components/Swiper-3.4.2/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="components/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="components/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="myajax.js" charset="UTF-8" ></script>
+		<script src="js/shop-list.js" charset="UTF-8" ></script>
+	</body>	
 </html>
