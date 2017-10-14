@@ -5,7 +5,7 @@ $.get("http://h6.duchengjiu.top/shop/api_cat.php",{},function  (json) {
 	var data = json.data;
 	for(var i=0;i<data.length;i++){
 		var obj = data[i];
-		shoplist += `<li><a href="shop-list.html?goods_id=${obj.goods_id}">${obj.cat_name}</a></li>`;
+		shoplist += `<li><a href="shop-list.html?cat_id=${obj.cat_id}">${obj.cat_name}</a></li>`;
 	}
 	$("#cat").append(shoplist);
 })
@@ -36,7 +36,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":shopCatId,"page":1
 	var data = json.data;
 	for (var i=0;i<data.length;i++) {
 		var obj = data[i];
-		listShop += `<li class="products"><a href="details.html?goods_id=${obj.goods_id}">
+		listShop += `<li class="products"><a href="details.html?cat_id=${obj.cat_id}">
           <div><img src="${obj.goods_thumb}" /></div>
           <div class="goodname">${obj.goods_name}</div>
           <div class="goodprice">¥${obj.price}</div></a>
