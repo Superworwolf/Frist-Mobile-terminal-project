@@ -11,16 +11,23 @@
 </head>
 <body>
   <div class="title">
-  	<span></span>
+  	<a href="#" id="history" ontouchstart="javascript.go(-1)"></a>
   	<span>注册</span>
   </div>       
   <div class="register-box">
   	<form class="registerform">
   		<div><input placeholder="输入用户名" name="username"/></div>
   		<p class="usermessage">请输入3-16位字符</p>
-  		<div><input placeholder="请输入密码" name="password"/></div>
+  		<div class="showbox">
+  			<input type="password" placeholder="请输入密码" name="password"/>
+  			<div class="showorhidden">
+				  <i class="ball"></i>
+				  <span class="show-password">abc</span>
+				  <span class="hidden-password">...</span>
+			</div>
+  		</div>
   		<p class="passmessage">密码为6至12位数字或字母</p>
-  		<div><input placeholder="确认密码" name="surepassword"/></div>
+  		<div><input type="password" placeholder="确认密码" name="surepassword"/></div>
   		<p class="suremessage">密码与上述不符</p>
   		<div><input placeholder="输入验证码" name="inpqrcode"/ ><span class="qrcode"></span></div>
   		<p class="qrcodemessage">验证码输入错误</p>
@@ -28,7 +35,10 @@
   		<input type="submit" value="注册" />
   	</form>
   </div>
+  <div class="alert alert-info modalbox" role="alert">注册成功</div>
+  <div class="bigmodalbox"></div>
   <script type="text/javascript" src="components/jquery-3.2.1.min.js" ></script>
+  <script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js" ></script>
   <script>
   	
 	function madeqrcode(){
@@ -52,19 +62,25 @@
   		$(this).children("input").focus();
   	});
   	$("input[type=submit]")[0].disabled = "true";
-  	$("input[type=submit]").on("touchstart",function(){
+  	$("input[type=submit]").on("touchstart",function(event){
+  		event.preventDefault();
   		formVerification();
   		submitver();
   		var ousernamevalue = document.querySelector("input[name=username]").value;
   		var passwordvalue = document.querySelector("input[name=password]").value;
-		if ($("input[type=submit]")[0].disabled == null) {
+		if ($("input[type=submit]")[0].disabled == false) {
+			
   			$.post('http://h6.duchengjiu.top/shop/api_user.php',{
 	  status: 'register',
       username: ousernamevalue,
-      password: passwordvalue,
+      password: passwordvalue
 	},function(json){
-		console.log(json.message);
+		modalboxshow();
+		var t = setTimeout(modalboxhid,2000);
+		
 	})
+			}else{
+				alert(1)
 			}
   	})
   	function formVerification(){
@@ -75,48 +91,92 @@
   		var qrcodevalue = document.querySelector(".qrcode").innerText;
   		var inpqrcode = document.querySelector("input[name=inpqrcode]").value;
 		if (!(/^[a-z0-9_-]{3,16}$/.test(ousernamevalue))) {
-  			$(".usermessage").css({"display":"block"});
+  			$(".usermessage").css({"opacity":"1"});
 		}else{
-			$(".usermessage").css({"display":"none"});
+			$(".usermessage").css({"opacity":"0"});
 		}
 		if (!(/^[a-z0-9_-]{6,18}$/.test(passwordvalue))) {
-			$(".passmessage").css({"display":"block"});
+			$(".passmessage").css({"opacity":"1"});
 		}else{
-			$(".passmessage").css({"display":"none"});
+			$(".passmessage").css({"opacity":"0"});
 		}
 		if (passsurevalue!=passwordvalue) {
-			$(".suremessage").css({"display":"block"});
+			$(".suremessage").css({"opacity":"1"});
 		}else{
-			$(".suremessage").css({"display":"none"});
+			$(".suremessage").css({"opacity":"0"});
 		}
 		if (!inpqrcode) {
-			$(".qrcodemessage").text("请输入验证码").css({"display":"block"});
+			$(".qrcodemessage").text("请输入验证码").css({"opacity":"1"});
 		}else if(inpqrcode.toLowerCase()!=qrcodevalue.toLowerCase()){
-			$(".qrcodemessage").text("验证码输入错误").css({"display":"block"});
+			$(".qrcodemessage").text("验证码输入错误").css({"opacity":"1"});
 		}else{
-			$(".qrcodemessage").css({"display":"none"});
+			$(".qrcodemessage").css({"opacity":"0"});
 		}
   	}
   	function submitver(){
   		var oUserName = document.querySelector("input[name=username]");
   		var ousernamevalue = oUserName.value;
+  		var ousermess = document.querySelector(".usermessage").innerText;
   		var passwordvalue = document.querySelector("input[name=password]").value;
   		var passsurevalue = document.querySelector("input[name=surepassword]").value;
   		var qrcodevalue = document.querySelector(".qrcode").innerText;
   		var inpqrcode = document.querySelector("input[name=inpqrcode]").value;
-  		if ((/^[a-z0-9_-]{3,16}$/.test(ousernamevalue)&&
-  		    (/^[a-z0-9_-]{6,18}$/.test(passwordvalue))&&
+  		if ((/^[a-z0-9_]{3,20}$/.test(ousernamevalue))&&
+  		    (/^[a-z0-9_]{6,20}$/.test(passwordvalue))&&
   		    (passsurevalue==passwordvalue)&&
-  		    (inpqrcode.toLowerCase()==qrcodevalue.toLowerCase()))) {
+  		    (inpqrcode.toLowerCase()==qrcodevalue.toLowerCase())&&
+  		    (ousermess=="用户名可用")){
   			$("input[type=submit]")[0].disabled = null;
   		}else{
-  			$("input[type=submit]")[0].disabled = "true";
+  			$("input[type=submit]")[0].disabled = true;
   		}
   	}
+  	$("input[name=username]").on("blur",userjudge);
   	$("input").on("blur",function(){
   		formVerification();
   		submitver();
+  		userjudge();
   	})
+  	function modalboxshow(){
+  		$(".modalbox").css({"display":"block"});
+		$(".bigmodalbox").css({"display":"block"});
+  	}
+  	function modalboxhid(){
+  		$(".modalbox").css({"display":"none"});
+		$(".bigmodalbox").css({"display":"none"});
+  	}
+  	function userjudge(){
+  		var ousernamevalue = document.querySelector("input[name=username]").value;
+  		$.post('http://h6.duchengjiu.top/shop/api_user.php',{
+	  status: 'check',
+      username: ousernamevalue
+	},function(json){
+		if (json.code == 2001) {
+			$(".usermessage").text("用户名已存在");
+			$(".usermessage").css({"opacity":"1"});
+		}else if(json.code==1000){
+			$(".usermessage").text("请输入3-16位字符");
+			$(".usermessage").css({"opacity":"1"});
+		}else if(json.code == 0){
+			$(".usermessage").text("用户名可用");
+			$(".usermessage").css({"opacity":"0"});
+		}
+  	})
+  	}
+  	$(".showorhidden").on('touchstart',function(){
+	if($("input[name=password]")[0].type === "password"){
+		$(".ball").css("transform" ,"translateX(30px)");
+		$("input[name=password]")[0].type = "text";
+		$("input[name=surepassword")[0].type = "text;"
+		$(".showorhidden").css("background-color","#F23030")
+	}else if($("input[name=password]")[0].type === "text"){
+		$(".ball").css("transform" ,"translateX(0px)");
+		$("input[name=password]")[0].type = "password";
+		$("input[name=surepassword")[0].type = "password"
+		$(".showorhidden").css("background-color","#dedede")
+	}
+});
+
   </script>
 </body>
 </html>
