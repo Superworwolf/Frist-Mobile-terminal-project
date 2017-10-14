@@ -472,9 +472,10 @@ html{
 }
 .product-wrapper a{
 	display: block;
-	height: 5.3rem;
+	height: 7.3rem;
 	position: relative;
 	background-color: #FFFFFF;
+	text-decoration: none;
 }
 .product-wrapper a img{
 	width: 100%;
