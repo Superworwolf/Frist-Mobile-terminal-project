@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="title">
-  	<a href="#" id="history"></a>
+  	<a id="history" class="login-arrow" ontouchstart="javascript:history.go(-1);"></a>
   	<span>注册</span>
   </div>       
   <div class="register-box">
@@ -40,9 +40,6 @@
   <script type="text/javascript" src="components/jquery-3.2.1.min.js" ></script>
   <script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js" ></script>
   <script>
-  	$("#history").on("touchstart",function(){
-  		window.history.go(-1);
-  	})
 	function madeqrcode(){
 	var n = 65+parseInt(Math.random()*26);
   	var m = 97+parseInt(Math.random()*26);
@@ -94,7 +91,7 @@
   		var passsurevalue = document.querySelector("input[name=surepassword]").value;
   		var qrcodevalue = document.querySelector(".qrcode").innerText;
   		var inpqrcode = document.querySelector("input[name=inpqrcode]").value;
-		if (!(/^[a-z0-9_-]{3,16}$/.test(ousernamevalue))) {
+		if (!(/^[a-zA-Z0-9_-]{3,16}$/.test(ousernamevalue))) {
   			$(".usermessage").css({"opacity":"1"});
 		}else{
 			$(".usermessage").css({"opacity":"0"});
@@ -125,7 +122,7 @@
   		var passsurevalue = document.querySelector("input[name=surepassword]").value;
   		var qrcodevalue = document.querySelector(".qrcode").innerText;
   		var inpqrcode = document.querySelector("input[name=inpqrcode]").value;
-  		if ((/^[a-z0-9_]{3,20}$/.test(ousernamevalue))&&
+  		if ((/^[a-zA-Z0-9_]{3,20}$/.test(ousernamevalue))&&
   		    (/^[a-zA-Z0-9_]{6,20}$/.test(passwordvalue))&&
   		    (passsurevalue==passwordvalue)&&
   		    (inpqrcode.toLowerCase()==qrcodevalue.toLowerCase())&&

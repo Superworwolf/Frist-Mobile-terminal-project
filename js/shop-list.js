@@ -10,7 +10,7 @@ $.get("http://h6.duchengjiu.top/shop/api_cat.php",{},function  (json) {
 	$("#cat").append(shoplist);
 })
 //商品列表添加点击事件
-$("#cat li").on("click",function  () {
+$("#cat li").on("touch",function  () {
 	$("#cat a").css({"background":"white","color":"skyblue"});
 	$(this).css({"background":"blue","color":"white"})
 })
@@ -36,7 +36,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":shopCatId,"page":1
 	var data = json.data;
 	for (var i=0;i<data.length;i++) {
 		var obj = data[i];
-		listShop += `<li class="products"><a href="details.html?cat_id=${obj.cat_id}">
+		listShop += `<li class="products"><a href="details.html?goods_id=${obj.goods_id}">
           <div><img src="${obj.goods_thumb}" /></div>
           <div class="goodname">${obj.goods_name}</div>
           <div class="goodprice">¥${obj.price}</div></a>
