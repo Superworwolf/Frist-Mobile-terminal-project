@@ -340,6 +340,9 @@ p{
 .text{
 	margin:0.5rem auto 0;
 }
+.texts{
+	font-size: .5rem;
+}
 .footer .desc {
     text-align: center;
     color: #9b9b9b;
