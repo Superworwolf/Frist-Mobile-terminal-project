@@ -25,7 +25,7 @@
 				<a href="index.html" class="homePage">首页</a>
 				<a href="shop-list.html" class="homePage">社区</a>
 				<a href="Personal_Center.html" class="icons"><img src="img/people.png" class="imgs"/></a>
-				<a href="mycar.html" class="icons"><img src="img/gou.png" class="imgs"/></a>
+				<a href="javascript:;" id="jumptocar" class="icons"><img src="img/gou.png" class="imgs"/></a>
 			</div>			
 		</div>
 		<!--      轮播图部分          -->
@@ -197,6 +197,12 @@
 			mySwiper.update(true)
 			alert('更新成功');
 			})
+			var jumptocar = document.querySelector("#jumptocar");
+			if (!localStorage.username) {
+      		jumptocar.href = "login.html";
+      	}else{
+      		jumptocar.href = "mycar.html";
+      	}
 		</script>
 	</body>
 </html>
