@@ -112,10 +112,11 @@ body,html{
     width: 50%;
     float: left;
     margin-bottom: .2133333333rem;
+    
 }
 .product-wrapper a{
 	display: block;
-	height: 7rem;
+	height: 7.3rem;
 	position: relative;
 	background-color: #FFFFFF;
 }
