@@ -26,7 +26,7 @@ $.get("http://h6.duchengjiu.top/shop/api_goods.php",{"cat_id":62},function  (jso
 		var obj = data[i];
 		str3 +=`<li><a href="details.html?goods_id=${obj.goods_id}"><img src="${obj.goods_thumb}"/><span>${obj.goods_desc}</span><p>¥${obj.price}</p></a></li>`		
 	};
-	str3 += `<li><a href="shop_list.html?cat_id=62"><img src="img/moresp.png"/></a></li>`;
+	str3 += `<li><a href="shop-list.html?cat_id=62"><img src="img/moresp.png"/></a></li>`;
 	$("#product3").append(str3);
 })
 var str4 = "";

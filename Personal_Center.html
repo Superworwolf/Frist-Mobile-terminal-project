@@ -12,8 +12,8 @@
 <body>
 	       <header class="PC-hd">
 	       	个人中心
-	       	<a href="mycar.html" class="PC-hd-car-box"><img src="img/PC-hd-car.png"></a>
-	       	<a href="home_page.html" class="PC-hd-home-box"><img src="img/PC-hd-home.png"></a>
+	       	<a href="javascript:;" id="jumptocar" class="PC-hd-car-box"><img src="img/PC-hd-car.png"></a>
+	       	<a href="index.html" class="PC-hd-home-box"><img src="img/PC-hd-home.png"></a>
 	       </header>
 	       <div class="bg">
 	       	<div class="bg-center">
@@ -38,5 +38,13 @@
 	       	<script src="components/jquery-3.2.1.min.js"></script>
 	       	<script src="components/confirm.js"></script>
 	       	<script src="js/Personal-Center.js"></script>
+	       	<script>
+	       		var jumptocar = document.querySelector("#jumptocar");
+	       		if (!localStorage.username) {
+      		jumptocar.href = "login.html";
+      	}else{
+      		jumptocar.href = "mycar.html"
+      	}
+	       	</script>
 </body>
 </html>

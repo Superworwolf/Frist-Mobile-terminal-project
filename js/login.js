@@ -12,7 +12,7 @@ $('.Login-immediately').on('touchstart',function(){
         }else if(json.code === 0){
         	toast(json.message, 1500);
               setTimeout(function(){
-        		        	history.go(-1);
+        		  window.location.href='Personal_Center.html';
         	},2000);
         }else{
         	toast(json.message, 1500);

@@ -22,10 +22,10 @@
 		<!--头部-->
 		<div class="titles">
 			<div class="intitle">
-				<a href="home_page.html" class="homePage">首页</a>
-				<a href="" class="homePage">社区</a>
+				<a href="index.html" class="homePage">首页</a>
+				<a href="shop-list.html" class="homePage">社区</a>
 				<a href="Personal_Center.html" class="icons"><img src="img/people.png" class="imgs"/></a>
-				<a href="mycar.html" class="icons"><img src="img/gou.png" class="imgs"/></a>
+				<a href="javascript:;" id="jumptocar" class="icons"><img src="img/gou.png" class="imgs"/></a>
 			</div>			
 		</div>
 		<!--显示搜索商品-->
@@ -45,9 +45,9 @@
         <!--底部-->
         <div class="footer">
             <div class="text">
-            	<a class="download-suohuoapp" onclick="">客户端</a> | 
-            	<a href="//m.ymatou.com/home/ymt-about" onclick="">关于洋码头</a> | 
-            	<a href="//m.ymatou.com/home/ymt-media" onclick="">媒体报道</a></div>
+            	<a class="download-suohuoapp" ontoustart="">客户端</a> | 
+            	<a href="//m.ymatou.com/home/ymt-about" ontouchstart="">关于洋码头</a> | 
+            	<a href="//m.ymatou.com/home/ymt-media" ontouchstart="">媒体报道</a></div>
             <div class="desc">上海洋码头网络技术有限公司 版权所有</div>
         </div>
 		<script src="components/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -55,5 +55,13 @@
 		<script src="components/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="components/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/search.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var jumptocar = document.querySelector("#jumptocar");
+			if (!localStorage.username) {
+      		jumptocar.href = "login.html";
+      	}else{
+      		jumptocar.href = "mycar.html"
+      	}
+		</script>
 	</body>
 </html>
