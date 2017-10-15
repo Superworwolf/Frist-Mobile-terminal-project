@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="title">
-  	<a href="#" id="history" ontouchstart="javascript:history.go(-1)"></a>
+  	<a href="#" id="history"></a>
   	<span>注册</span>
   </div>       
   <div class="register-box">
@@ -40,7 +40,9 @@
   <script type="text/javascript" src="components/jquery-3.2.1.min.js" ></script>
   <script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js" ></script>
   <script>
-  	
+  	$("#history").on("touchstart",function(){
+  		window.history.go(-1);
+  	})
 	function madeqrcode(){
 	var n = 65+parseInt(Math.random()*26);
   	var m = 97+parseInt(Math.random()*26);
@@ -77,10 +79,12 @@
 	},function(json){
 		modalboxshow();
 		var t = setTimeout(modalboxhid,2000);
+		var jumpTologin = setTimeout(function(){
+			location.href = "login.html";
+		},3000);
+		
 		
 	})
-			}else{
-				alert(1)
 			}
   	})
   	function formVerification(){
