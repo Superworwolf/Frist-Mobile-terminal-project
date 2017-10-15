@@ -157,11 +157,17 @@ function scroll(scrollTo, time) {
 var searchs = $("#inputGroups");
 var oInput = $("#inputGroup");
 var inputText;
+var lock = true;
 searchs.on("touchstart",function  () {
 	inputText = oInput[0].value;
 	console.log(inputText);
 	if (inputText === "") {
+		if(!lock) return;
+		lock = false;
 		toast("请输入要搜索的商品",1500);
+		var t = setTimeout(function(){
+			lock = true;
+		},1500);
 	} else{
 		window.location.href = "search.html?search_text="+inputText;
 	}
