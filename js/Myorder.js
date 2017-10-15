@@ -22,10 +22,10 @@ function showAddress() {
 					})
 		}
 		showAddress();
-
+		
 		var selected_address_id = 0;
 		var oAddressUl = document.querySelector('.address-ul');
-		oAddressUl.onclick = function(event) {
+		oAddressUl.addEventListener("touchstart",function(event) {
 			event = event || window.event;
 			var target = event.target || event.srcElement;
 			console.log(target.nodeName);
@@ -58,7 +58,7 @@ function showAddress() {
 				}
 
 			}
-		}		
+		})		
 		$(window).on('scroll',function(){
 		$('body').bind('touchmove', function(e) {
        var  winHeight = $(window).scrollTop();

@@ -220,12 +220,13 @@ body{
 	/*background-image: url("../img/2b2e5682fb6cfdb0c3a78404ac465059_03.png");*/
 	background-size: 100% 100%;
 	background-color: #fff;
-	border-radius:30px;
+	border-radius:5px;
 	width: 8rem;
 	height: 4rem;
 	float: left;
 	margin:1rem .3rem 1rem;
-	-webkit-border-image:url("../img/e5639592b178ac215b1b31ee61c9b876.png") 30 30 round;
+	/*-webkit-border-image:url("../img/e5639592b178ac215b1b31ee61c9b876.png") 30 30 round;*/
+	border: 2px dashed blueviolet;
 }
 .delete{
 	float: right;
@@ -235,6 +236,9 @@ body{
 	height: 1rem;
 	margin-top:.2rem;
 	margin-right:.4rem;
+}
+.address-ul .selected{
+	border: 2px solid orangered;
 }
 .address-ul li:nth-child(3n+1){
 	margin-left:-1.2rem;

@@ -32,7 +32,7 @@
 	<script src="js/toast.js"></script>
 	<script>
 		var oOrder = document.querySelector('#order');
-		oOrder.ontouchstart = function() {
+		$("#order").on("touchstart",function() {
 			var address_id = selected_address_id;
 			if (address_id === 0) {
 				toast('请先选择一个收货地址\rΣ( ° △ °|||)︴', 1500);
@@ -44,14 +44,14 @@
 					toast('订单提交成功\rヾ(o◕∀◕)ﾉヾ', 1500);
 					confirm("订单提交成功,是否返回首页", function(){
 						console.log('返回首页');
-						location.href = "index.html";
+						location.href = "home_page.html";
 					}, function(){
 						console.log('取消删除');
 					});
 				}
 			});
 
-		}
+		});
 	</script>
 <div class="modal register">
 	<div class="container">
@@ -98,7 +98,7 @@
 
 	//给添加按钮添加事件
 	var oAdd = document.querySelector('.add');
-	oAdd.onclick = function() {
+	oAdd.addEventListener("touchstart",function() {
 		var adressMessage = document.querySelector(".addressMessage");
 		var addressLabel = adressMessage.querySelectorAll("label");
 		for (var i = 0 ;i< addressLabel.length ; i++) {
@@ -109,7 +109,6 @@
 				return;
 			}
 		}
-
 		var postobj = serializeForm(document.querySelector('form'));
 		$.post('http://h6.duchengjiu.top/shop/api_useraddress.php?status=add&token='+localStorage.token, postobj, function(json){
 			if (json.code === 0) {
@@ -117,7 +116,7 @@
 				showAddress();
 			}
 		});
-	}
+	});
 </script>
 </body>
 </html>
