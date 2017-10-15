@@ -1,0 +1,60 @@
+.modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 134%;
+    border: none;
+  z-index: 99;
+}
+.modal .container {
+  position: absolute;
+  left: 78px;
+  right: 0;
+  width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #3C3C3C;
+}
+.modal .container .hd {
+	overflow: hidden;
+  line-height: 40px;
+  text-align: center;
+  padding-right: 10px;
+  background-color:#252525;
+  border-bottom: 1px solid #3C3C3C;
+  font-size: 16px;
+  font-weight: 900;
+  color: orangered;
+}
+.modal .container .hd span {
+	position: relative;
+
+  cursor: pointer;
+  color: orangered;
+  padding: 5px 10px;
+	border-radius: 50%;
+}
+.modal .container .hd span:hover {
+  background-color: orangered;
+  color: #ccc;
+}
+#order{cursor: pointer;}
+#order:hover{color: red;}
+.modal .container .bd {
+  padding: 10px;
+}
+main h3 {
+	color: #666;
+	margin-left: 40px;
+}
+#add-address{
+	border: 0;
+	background-color:#FFFFFF;
+	font-size: 15px;
+	margin-left: 150px;
+	margin-bottom: 50px ;
+}
+#add-address:hover{
+	color: orangered;
+}
