@@ -99,7 +99,7 @@
 		}else{
 			$(".usermessage").css({"opacity":"0"});
 		}
-		if (!(/^[a-z0-9_-]{6,18}$/.test(passwordvalue))) {
+		if (!(/^[a-zA-Z0-9_-]{6,18}$/.test(passwordvalue))) {
 			$(".passmessage").css({"opacity":"1"});
 		}else{
 			$(".passmessage").css({"opacity":"0"});
@@ -126,7 +126,7 @@
   		var qrcodevalue = document.querySelector(".qrcode").innerText;
   		var inpqrcode = document.querySelector("input[name=inpqrcode]").value;
   		if ((/^[a-z0-9_]{3,20}$/.test(ousernamevalue))&&
-  		    (/^[a-z0-9_]{6,20}$/.test(passwordvalue))&&
+  		    (/^[a-zA-Z0-9_]{6,20}$/.test(passwordvalue))&&
   		    (passsurevalue==passwordvalue)&&
   		    (inpqrcode.toLowerCase()==qrcodevalue.toLowerCase())&&
   		    (ousermess=="用户名可用")){
