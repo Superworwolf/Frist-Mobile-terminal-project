@@ -32,7 +32,7 @@
   		<div><input placeholder="输入验证码" name="inpqrcode"/ ><span class="qrcode"></span></div>
   		<p class="qrcodemessage">验证码输入错误</p>
   		<div class="ymatoumessage">注册即视为同意<a href="#">《洋码头用户协议》</a></div>
-  		<input type="submit" value="注册" />
+  		<div data-name="" value="注册" class="registersuc"/>立即注册</div>
   	</form>
   </div>
   <div class="alert alert-info modalbox" role="alert">注册成功</div>
@@ -60,20 +60,21 @@
   		event.preventDefault();
   		$(this).children("input").focus();
   	});
-  	$("input[type=submit]")[0].disabled = "true";
-  	$("input[type=submit]").on("touchstart",function(event){
-  		event.preventDefault();
+//	$("input[type=submit]")[0].type = "button";
+  	$(".registersuc").on("touchstart",function(event){
+  		var event = event || window.event;
   		formVerification();
   		submitver();
   		var ousernamevalue = document.querySelector("input[name=username]").value;
   		var passwordvalue = document.querySelector("input[name=password]").value;
-		if ($("input[type=submit]")[0].disabled == false) {
-			
+		if ($(".registersuc").data("name") == "2") {
+			console.log(1);
   			$.post('http://h6.duchengjiu.top/shop/api_user.php',{
 	  status: 'register',
       username: ousernamevalue,
       password: passwordvalue
 	},function(json){
+		console.log(1);
 		modalboxshow();
 		var t = setTimeout(modalboxhid,2000);
 		var jumpTologin = setTimeout(function(){
@@ -82,7 +83,7 @@
 		
 		
 	})
-			}
+		}
   	})
   	function formVerification(){
   		var oUserName = document.querySelector("input[name=username]");
@@ -127,17 +128,72 @@
   		    (passsurevalue==passwordvalue)&&
   		    (inpqrcode.toLowerCase()==qrcodevalue.toLowerCase())&&
   		    (ousermess=="用户名可用")){
-  			$("input[type=submit]")[0].disabled = null;
+//			$(".registersuc")[0].disabled = null;
+  			$(".registersuc")[0].dataset.name = "2";
   		}else{
-  			$("input[type=submit]")[0].disabled = true;
+//			$(".registersuc")[0].disabled = true;
+  			$(".registersuc")[0].dataset.name = "1";
   		}
   	}
-  	$("input[name=username]").on("blur",userjudge);
-  	$("input").on("blur",function(){
-  		formVerification();
-  		submitver();
-  		userjudge();
+  	$("input[name=username]").on("blur",function(){
+  		$(".usermessage").css({"opacity":"0"});
+  		if ($(this).val()=="") {
+  			return;
+  		}
+  		if((/^[a-zA-Z0-9_]{3,20}$/.test($(this).val()))){
+  			userjudge();
+  			submitver();
+  		}else{
+  			$(".usermessage").css({"opacity":1});
+  		}
+  	});
+  	$("input[name=password").on("blur",function(){
+  		$(".passmessage").css({"opacity":"0"});
+  		if ($(this).val()=="") {
+  			return;
+  		}
+  		var passwordvalue = document.querySelector("input[name=password]").value;	
+  		if (!(/^[a-zA-Z0-9_]{6,20}$/.test(passwordvalue))) {
+  			$(".passmessage").css({"opacity":"1"});
+  		}else{
+  			submitver();
+  			$(".passmessage").css({"opacity":"0"});
+  		}
+  	});
+  	$("input[name=surepassword").on("blur",function(){
+  		$(".suremessage").css({"opacity":"0"});
+  		if ($(this).val()=="") {
+  			return;
+  		}
+  		var passwordvalue = document.querySelector("input[name=password]").value;
+  		var passsurevalue = document.querySelector("input[name=surepassword]").value;
+  		if (passsurevalue != passwordvalue) {
+  			$(".suremessage").css({"opacity":"1"});
+  		}else{
+  			submitver();
+  			$(".suremessage").css({"opacity":"0"});
+  		}
+  	});
+  	$("input[name=inpqrcode]").on("blur",function(){
+  		$(".qrcodemessage").css({"opacity":"0"});
+  		if ($(this).val()=="") {
+  			$(".qrcodemessage").css({"opacity":"0"});
+  			return;
+  		}
+  		var qrcodevalue = document.querySelector(".qrcode").innerText;
+  		var inpqrcode = document.querySelector("input[name=inpqrcode]").value;
+  		if(inpqrcode.toLowerCase()!=qrcodevalue.toLowerCase()){
+  			$(".qrcodemessage").text("验证码输入错误").css({"opacity":"1"});
+  		}else{
+  			submitver();
+  			$(".qrcodemessage").css({"opacity":"0"});
+  		}
   	})
+//	$("input").on("blur",function(){
+//		formVerification();
+//		submitver();
+//		userjudge();
+//	})
   	function modalboxshow(){
   		$(".modalbox").css({"display":"block"});
 		$(".bigmodalbox").css({"display":"block"});
@@ -164,6 +220,7 @@
 		}
   	})
   	}
+  	//显示密码
   	$(".showorhidden").on('touchstart',function(){
 	if($("input[name=password]")[0].type === "password"){
 		$(".ball").css("transform" ,"translateX(30px)");
@@ -177,7 +234,6 @@
 		$(".showorhidden").css("background-color","#dedede")
 	}
 });
-
   </script>
 </body>
 </html>
