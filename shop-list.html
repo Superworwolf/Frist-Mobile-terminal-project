@@ -10,9 +10,19 @@
 		<link rel="stylesheet" type="text/css" href="components/Swiper-3.4.2/dist/css/animate.min.css"/>
 		<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css"/>		
 		<link rel="stylesheet" type="text/css" href="css/shop-list.css"/>
+		<style>
+			.bodybox{
+				width: 100%;
+				position: absolute;
+				transform: scale(.1);
+				transition: all 1s ease 0s;
+			}
+		</style>
 	</head>
 	<body>
+		
 		<!--头部-->
+		<div class="bodybox">
 		<div class="titles">
 			<div class="intitle">
 				<a href="index.html" class="homePage">首页</a>
@@ -53,7 +63,7 @@
             <div class="desc">上海洋码头网络技术有限公司 版权所有</div>
         </div>  
 	
-		
+		</div>
 		<script src="components/jquery-3.2.1.min.js" charset="UTF-8" ></script>
 		<script src="components/Swiper-3.4.2/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="components/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
@@ -61,6 +71,7 @@
 		<script src="myajax.js" charset="UTF-8" ></script>
 		<script src="js/shop-list.js" charset="UTF-8" ></script>
 		<script>
+				$(".bodybox").css({"transform":"scale(1)"});
 			var jumptocar = document.querySelector("#jumptocar");
 			if (!localStorage.username) {
       		jumptocar.href = "login.html";
