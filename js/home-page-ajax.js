@@ -96,7 +96,7 @@ shoplist(1);
 shoplist(2);
 //加载更多
 var pages = 2;
-$("#loadmore").on("touchstart",function() {
+$("#loadmore").on("touchend",function() {
 	var strmore = ""
 	pages++;
 	$.get("http://h6.duchengjiu.top/shop/api_goods.php",{"page":pages},function(json) {
@@ -132,22 +132,24 @@ window.onscroll=function(){
     }
 } 
 $('.go-top').click(function(){
-    scroll('0px', 500);
+    scroll('0px', 1000);
 
 });
 function scroll(scrollTo, time) {
-    var scrollFrom = parseInt(document.body.scrollTop),
-        i = 0,
-        runEvery = 5; // run every 5ms
-
+	if (document.body.scrollTop) {
+		var scrollFrom = document.body.scrollTop
+	} else{
+		var scrollFrom = document.documentElement.scrollTop
+	};   
+    var i = 0,
+        runEvery = 20; // run every 5ms
     scrollTo = parseInt(scrollTo);
-    time /= runEvery;
+    time /= runEvery;// 帧数
 
     var interval = setInterval(function () {
         i++;
-
-        document.body.scrollTop = (scrollTo - scrollFrom) / time * i + scrollFrom;
-
+        document.documentElement.scrollTop =scrollFrom - scrollFrom/time*i;
+        document.body.scrollTop =scrollFrom - scrollFrom/time*i;
         if (i >= time) {
             clearInterval(interval);
         }
